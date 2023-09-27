@@ -1,0 +1,21 @@
+{
+    "name": "debanjan/music_fest",
+    "description": "Music Fest Application",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MusicFest\\": "app/",
+            "MusicFest\\Controllers\\": "app/Controllers",
+            "MusicFest\\Views\\": "app/Views"
+        }
+    },
+    "authors": [
+        {
+            "name": "Debanjan",
+            "email": "el_debanjan@yahoo.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.3"
+    }
+}
