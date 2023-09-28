@@ -1,0 +1,55 @@
+/* Sticky Footer Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: transparent; /* To ensure the overlay color doesn't affect the body */
+}
+
+.container {
+    flex: 1;
+}
+
+/* Style adjustments for FontAwesome icons in the carousel */
+.carousel-control-prev i, .carousel-control-next i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Adjustments for carousel indicators */
+.custom-carousel-indicators {
+    bottom: -30px; 
+}
+
+/* Artist details style */
+.artist-detail {
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: #273f44; /* Setting color for the item texts */
+}
+
+/* Artist details and title style */
+h1.text-center, 
+.carousel-item h3, 
+.carousel-item p {
+    color: #1a292c; /* Setting color for the title and artist details */
+}
+
+/* Overlay to reduce background transparency */
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* White color with 50% opacity */
+    pointer-events: none; /* Ensures the overlay doesn't interfere with other interactions */
+    z-index: -1;
+}
+.text-grey {
+    color:#202121;
+}

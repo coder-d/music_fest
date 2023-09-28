@@ -13,7 +13,5 @@ $router->addRoute('GET', '^/$', function () {
     $homeController = new MusicFest\Controllers\HomeController(new MusicFest\Views\HomeView());
     $homeController->index();
 });
-
-
 // Route the current request
 $router->route();
