@@ -5,6 +5,7 @@ config/config.php
 node_modules
 composer.lock
 .phpunit.result.cache
+SiteSettings.php
 # macOS system files
 .DS_Store
 .AppleDouble/
