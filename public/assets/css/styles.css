@@ -53,7 +53,7 @@ body, html {
 /* For devices with a screen width of 768px and above (e.g., tablets and desktops) */
 @media (min-width: 768px) {
     .artist-detail {
-        width: auto; /* Revert to the default width or you can just remove the width property */
+        width: auto;
     }
 }
 
@@ -98,7 +98,7 @@ footer.bg-dark {
     display: flex;
     justify-content: center;
     width: 100%; /* Ensuring it takes full width of the container */
-    background: linear-gradient(120deg, #696969, #b33e3e, #FFFFFF);
+    background-color: rgba(183, 62, 62, 0.6);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -115,3 +115,18 @@ footer.bg-dark {
     display: table;
     clear: both;
 }
+
+
+/* About the Festival section styles */
+.section-block {
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    color: #fff; /* Text color set to white */
+}
+
+.section-block h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
