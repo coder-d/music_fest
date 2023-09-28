@@ -6,8 +6,9 @@ class HomeView {
 
     public function render(array $musicEvents) {
         ob_start();
+        echo '<div class="title-box">';
         echo '<h1 class="text-center text-grey">Fictional Music Festival</h1>';
-
+        echo '</div>';
         if (empty($musicEvents)) {
             echo '<p>No music events available.</p>';
         } else {
@@ -18,8 +19,8 @@ class HomeView {
             $first = true;
 
             foreach ($musicEvents as $index => $event) {
-                // Every third event, or if it's the very first event, start a new carousel-item
-                if ($index % 3 == 0) {
+                // Every fourth event, or if it's the very first event, start a new carousel-item
+                if ($index % 4 == 0) {
                     if ($index != 0) { // if it's not the very first, close the previous carousel-item
                         echo '</div>';
                     }
@@ -28,7 +29,7 @@ class HomeView {
                 }
 
                 // Display the artist detail
-                echo '<div class="artist-detail text-center" style="color: #273f44;">';
+                echo '<div class="artist-detail text-center">';
                 echo "<h3>{$event['name']}</h3>";
                 echo "<p>Time: {$event['time']}</p>";
                 echo "<p>Stage: {$event['stage']}</p>";
@@ -43,7 +44,7 @@ class HomeView {
             echo '</div>'; // End of carousel-inner
 
             // Carousel Indicators
-            $indicatorCount = ceil(count($musicEvents) / 3);
+            $indicatorCount = ceil(count($musicEvents) / 4);
             echo '<ol class="carousel-indicators custom-carousel-indicators">';
             for ($i = 0; $i < $indicatorCount; $i++) {
                 echo $i == 0 ? '<li data-target="#carouselExampleIndicators" data-slide-to="' . $i . '" class="active"></li>' : '<li data-target="#carouselExampleIndicators" data-slide-to="' . $i . '"></li>';

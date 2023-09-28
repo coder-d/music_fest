@@ -19,6 +19,8 @@ class HomeController {
             ['name' => 'Artist Four', 'time' => '5:00 PM - 6:00 PM', 'stage' => 'Second Stage'],
             ['name' => 'Artist Five', 'time' => '21:00 PM - 22:00 PM', 'stage' => 'Third Stage'],
             ['name' => 'Artist Six', 'time' => '22:00 PM - 23:00 PM', 'stage' => 'Main Stage'],
+            ['name' => 'Artist Seven', 'time' => '21:00 PM - 22:00 PM', 'stage' => 'Outer Stage'],
+            ['name' => 'Artist Eight', 'time' => '22:00 PM - 23:00 PM', 'stage' => 'Outer Stage'],
         ];
 
         $this->view->render($musicEvents);

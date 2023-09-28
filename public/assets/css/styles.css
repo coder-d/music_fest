@@ -1,43 +1,76 @@
 /* Sticky Footer Styles */
 body {
-    display: flex;
+    display: flex; 
+    background-color: transparent; 
+    font-family: 'Helvetica', sans-serif; /* Set the body text to Helvetica */
     flex-direction: column;
-    min-height: 100vh;
-    background-color: transparent; /* To ensure the overlay color doesn't affect the body */
+    min-height: 100vh; /* Full height of the viewport */
 }
 
+body, html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: 100%; 
+}
+
+/* Styling for the container */
 .container {
-    flex: 1;
+    flex: 1; /* Grow to take up all available space */
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+    padding-bottom: 20px;
 }
 
-/* Style adjustments for FontAwesome icons in the carousel */
+
+/* Carousel Navigation Icons */
 .carousel-control-prev i, .carousel-control-next i {
     font-size: 30px;
     color: white;
 }
 
-/* Adjustments for carousel indicators */
+/* Custom Carousel Indicators */
 .custom-carousel-indicators {
     bottom: -30px; 
+   
 }
+.custom-carousel-indicators li { background-color:#343a40}
 
-/* Artist details style */
+/* Artist Details Styling */
 .artist-detail {
-    width: 33.33%;
+    width: 100%;
     float: left;
     box-sizing: border-box;
-    padding: 0 10px;
-    color: #273f44; /* Setting color for the item texts */
+    padding: 20px;
+    background: linear-gradient(120deg, #696969, #b33e3e, #FFFFFF); /* Updated gradient background */
+    border-radius: 15px;
+    margin: 10px 5px;
+    transition: transform 0.3s ease;
+    color: #fff; /* Set text color to white for artist details */
 }
 
-/* Artist details and title style */
+/* For devices with a screen width of 768px and above (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    .artist-detail {
+        width: auto; /* Revert to the default width or you can just remove the width property */
+    }
+}
+
+
+/* Hover Effect for Artist Details */
+.artist-detail:hover {
+    transform: translateY(-10px); 
+}
+
+/* Typography Styles */
 h1.text-center, 
 .carousel-item h3, 
 .carousel-item p {
-    color: #1a292c; /* Setting color for the title and artist details */
+    color: #fff; /* Set text color to white for main title and artist details */
 }
 
-/* Overlay to reduce background transparency */
+/* Overall page overlay */
 body:before {
     content: "";
     display: block;
@@ -46,10 +79,39 @@ body:before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* White color with 50% opacity */
-    pointer-events: none; /* Ensures the overlay doesn't interfere with other interactions */
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
     z-index: -1;
 }
+
+/* Additional text style */
 .text-grey {
-    color:#202121;
+    color: #202121;
+}
+
+/* Footer Styles */
+footer.bg-dark {
+    color: #fff; /* Set footer text to white */
+}
+/* Styling for the title box */
+.title-box {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensuring it takes full width of the container */
+    background: linear-gradient(120deg, #696969, #b33e3e, #FFFFFF);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title-box h1 {
+    margin: 0;
+    color: #ffffff; /* Changing the text color to white */
+}
+
+/* Clearing floats after the artist details */
+.carousel-item:after {
+    content: "";
+    display: table;
+    clear: both;
 }
