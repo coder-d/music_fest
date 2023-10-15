@@ -1,0 +1,35 @@
+{
+  "name": "music_fest",
+  "version": "1.0.0",
+  "description": "A web application for a fictional music festival. This project uses the MVC design pattern, along with other popular web technologies and libraries.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-d/music_fest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coder-d/music_fest/issues"
+  },
+  "homepage": "https://github.com/coder-d/music_fest#readme",
+  "devDependencies": {
+    "critters-webpack-plugin": "^3.0.2",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^4.5.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.2"
+  }
+}

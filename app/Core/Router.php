@@ -32,7 +32,7 @@ class Router
         
         // Check for the root route ("/")
         if ($requestUri === '/' && $requestMethod === 'GET') {
-            $this->executeCallback($this->findRouteForRoot());
+            $this->redirectToDistIndex();
             return;
         }
         
@@ -49,6 +49,20 @@ class Router
 
         // If no route matches, handle 404 errors
         $this->handle404();
+    }
+
+    // Redirect to /dist/index.html
+    private function redirectToDistIndex()
+    {
+        $distIndex = $_SERVER['DOCUMENT_ROOT'] . '/dist/index.html';
+        
+        if (file_exists($distIndex)) {
+            header('Location: /dist/index.html');
+            exit;
+        } else {
+            $callback = $this->findRouteForRoot();
+            $this->executeCallback($callback);
+        }
     }
 
     // Find the route associated with the root ("/") if it exists

@@ -6,6 +6,7 @@ node_modules
 composer.lock
 .phpunit.result.cache
 SiteSettings.php
+webpack.config.js
 # macOS system files
 .DS_Store
 .AppleDouble/

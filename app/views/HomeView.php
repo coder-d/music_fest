@@ -23,9 +23,16 @@ class HomeView {
 
         $content = ob_get_clean();
 
-        $template = file_get_contents(__DIR__ . '/../../public/templates/default.html');
-        $outputWithBaseUrl = str_replace('<!--BASE_URL-->', \MusicFest\Core\SiteSettings::get('base_url'), $template);
-        $outputWithContent = str_replace('<!-- CONTENT -->', $content, $outputWithBaseUrl);
+        // Try to get the content from the 'dist' directory first
+        if (file_exists(__DIR__ . '/../../dist/index.htmls')) {
+            $template = file_get_contents(__DIR__ . '/../../dist/index.html');
+        } else {
+            // Fallback to the original template if 'dist/index.html' doesn't exist
+            $template = file_get_contents(__DIR__ . '/../../public/templates/default.html');
+        }
+
+        $outputWithBaseUrl = str_replace('##BASE_URL##', \MusicFest\Core\SiteSettings::get('base_url'), $template);
+        $outputWithContent = str_replace('##CONTENT##', $content, $outputWithBaseUrl);
         echo $outputWithContent;
     }
 

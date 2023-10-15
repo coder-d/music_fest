@@ -11,6 +11,9 @@ jQuery: JavaScript library simplifying DOM manipulations and event handling.
 PHP: Server-side scripting language.  
 
 Composer: Dependency manager for PHP.  
+
+Webpack: A module bundler and task runner that packs module dependencies to create highly optimized bundle
+
 # Installation:
 Clone the repository:
 
@@ -25,6 +28,12 @@ composer install
 
 # Autoload Composer dependencies:
 composer dump-autoload
+
+# Configure Webpack:
+
+Rename webpack.config.js.env in the root directory to webpack.config.js.
+Update the publicPath in webpack.config.js to reflect your server's subdirectory (e.g., publicPath: '/your_server_sub_directory/dist/').
+Update the '##BASE_URL##': 'http://localhost/music_fest/'
 
 
 # Configure the Base URL:
